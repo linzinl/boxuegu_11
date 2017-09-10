@@ -27,7 +27,8 @@
 
     <!-- 模板引擎 -->
     <script id="settings-tpl" type="text/tpl">
-        <form action="" class="form-horizontal">
+        <form id="settings-form" action="/v6/teacher/modify" method="post" class="form-horizontal">
+            <input type="hidden" name="tc_id" value="{{tc_id}}">
             <div class="form-group">
                 <label for="" class="col-xs-3 control-label">姓名</label>
                 <div class="col-xs-5">
@@ -54,10 +55,10 @@
                 <label for="" class="col-xs-3 control-label">性别</label>
                 <div class="col-xs-3">
                     <label class="radio-inline">
-                                    <input name="tc_gender" type="radio" {{tc_gender==0?"checked":""}}> 男
+                                    <input name="tc_gender" type="radio" value="0" {{tc_gender==0?"checked":""}}> 男
                                 </label>
                     <label class="radio-inline">
-                                    <input name="tc_gender" type="radio" {{tc_gender==1?"checked":""}}> 女
+                                    <input name="tc_gender" type="radio" value="1" {{tc_gender==1?"checked":""}}> 女
                                 </label>
                 </div>
             </div>
@@ -70,17 +71,17 @@
             <div class="form-group">
                 <label for="" class="col-xs-3 control-label">籍贯</label>
                 <div class="col-xs-5">
-                    <select name="" class="form-control input-sm">
+                    <select name="tc_city" value="tc_city" class="form-control input-sm">
                                     <option value="">河北省</option>
                                     <option value="">山东省</option>
                                     <option value="">北京市</option>
                                 </select>
-                    <select name="" class="form-control input-sm">
+                    <select name="tc_district" value="tc_district" class="form-control input-sm">
                                     <option value="">河北省</option>
                                     <option value="">山东省</option>
                                     <option value="">北京市</option>
                                 </select>
-                    <select name="" class="form-control input-sm">
+                    <select name="tc_hometown" value="tc_hometown" class="form-control input-sm">
                                     <option value="">河北省</option>
                                     <option value="">山东省</option>
                                     <option value="">北京市</option>
@@ -114,7 +115,7 @@
             <div class="form-group">
                 <div class="col-xs-8">
                     <button type="submit" class="btn btn-success btn-sm pull-right">保 存</button>
-                    <a href="./repass.html" class="btn btn-link btn-sm pull-right">更改密码？</a>
+                    <a href="/dist/html/user/repass.html" class="btn btn-link btn-sm pull-right">更改密码？</a>
                 </div>
             </div>
         </form>

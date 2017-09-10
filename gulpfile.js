@@ -14,6 +14,7 @@ var htmlReplace = require('gulp-html-replace');
 /* html处理 */
 gulp.task("html", function() {
     gulp.src(["./src/**/*.html", "index.html"])
+        /* 用gulp-html-replace插件实现重复的html代码重复利用 */
         .pipe(htmlReplace({
             style: gulp.src('src/html/common/style.html'),
             aside: gulp.src('src/html/common/aside.html'),
@@ -71,10 +72,10 @@ var jsModules = [
     //学科分类
     "src/js/category/add.js",
     "src/js/category/edit.js",
-    "src/js/category/list.js",
-    //公共
-    "src/js/common/aside.js",
-    "src/js/common/header.js"
+    "src/js/category/list.js"
+    /*     //公共
+        "src/js/common/aside.js",
+        "src/js/common/header.js" */
 ]
 
 /* 打包commonjs模块 未循环遍历前 */
